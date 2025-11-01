@@ -1,5 +1,4 @@
-import { ReactNode } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import type { ReactNode } from 'react';
 import Header from './Layout/Header';
 import Sidebar from './Layout/Sidebar';
 

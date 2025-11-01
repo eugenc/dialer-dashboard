@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { campaignApi } from '../lib/api';
 
 export default function CallHistory() {
-  const { data, isLoading } = useQuery({
+  const { isLoading } = useQuery({
     queryKey: ['call-history'],
     queryFn: () => campaignApi.getLogs(100).then(res => res.data),
   });
