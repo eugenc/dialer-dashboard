@@ -3,11 +3,11 @@ import { campaignApi } from '../../lib/api';
 import { CallLog } from '../../lib/types';
 
 const statusColors: Record<string, string> = {
-  connected: 'text-success',
-  dialing: 'text-warning',
-  failed: 'text-danger',
-  voicemail: 'text-info',
-  'no-answer': 'text-warning',
+  connected: 'text-green-600',
+  dialing: 'text-yellow-600',
+  failed: 'text-red-600',
+  voicemail: 'text-cyan-600',
+  'no-answer': 'text-yellow-600',
   completed: 'text-gray-600',
 };
 
@@ -49,7 +49,7 @@ export default function LiveTimeline() {
                 </div>
               </div>
               {call.retellCallId && (
-                <span className="text-xs text-success">✓ Retell</span>
+                <span className="text-xs text-green-600">✓ Retell</span>
               )}
             </div>
           ))

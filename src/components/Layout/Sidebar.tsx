@@ -22,7 +22,7 @@ export default function Sidebar() {
                   to={item.path}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                     isActive
-                      ? 'bg-primary text-white'
+                      ? 'bg-blue-500 text-white'
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >

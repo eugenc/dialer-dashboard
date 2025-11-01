@@ -7,7 +7,7 @@ export default function Header() {
         </h1>
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-600">Production</span>
-          <div className="h-2 w-2 bg-success rounded-full animate-pulse"></div>
+          <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse"></div>
         </div>
       </div>
     </header>

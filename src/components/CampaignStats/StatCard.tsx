@@ -5,11 +5,11 @@ interface StatCardProps {
 }
 
 const colorClasses = {
-  primary: 'border-primary bg-blue-50',
-  success: 'border-success bg-green-50',
-  warning: 'border-warning bg-yellow-50',
-  danger: 'border-danger bg-red-50',
-  info: 'border-info bg-cyan-50',
+  primary: 'border-blue-500 bg-blue-50',
+  success: 'border-green-500 bg-green-50',
+  warning: 'border-yellow-500 bg-yellow-50',
+  danger: 'border-red-500 bg-red-50',
+  info: 'border-cyan-500 bg-cyan-50',
   gray: 'border-gray-300 bg-gray-50',
 };
 
