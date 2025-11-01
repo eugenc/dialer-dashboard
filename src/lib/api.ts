@@ -1,6 +1,22 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://ai-predictive-dialer.vercel.app';
+// Use local backend in development, production URL otherwise
+const getApiBaseUrl = () => {
+  // Check if explicitly set via env variable
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  
+  // In development (localhost), use local backend
+  if (import.meta.env.DEV || window.location.hostname === 'localhost') {
+    return 'http://localhost:3000';
+  }
+  
+  // Default to production
+  return 'https://ai-predictive-dialer.vercel.app';
+};
+
+const API_BASE_URL = getApiBaseUrl();
 const API_KEY = import.meta.env.VITE_API_KEY || '386f11e1dc8631c73c126acc4a76c050757ab5abcb99583af201f9186dbb0d9f';
 
 export const apiClient = axios.create({

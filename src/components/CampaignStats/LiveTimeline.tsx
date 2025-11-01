@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { campaignApi } from '../../lib/api';
-import { CallLog } from '../../lib/types';
+import type { CallLog } from '../../lib/types';
 
 const statusColors: Record<string, string> = {
   connected: 'text-green-600',

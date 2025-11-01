@@ -1,4 +1,4 @@
-import { CampaignStats as CampaignStatsType } from '../../lib/types';
+import type { CampaignStats as CampaignStatsType } from '../../lib/types';
 import StatCard from './StatCard';
 
 interface Props {
