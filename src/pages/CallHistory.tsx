@@ -24,7 +24,7 @@ export default function CallHistory() {
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
   const [showFilters, setShowFilters] = useState(false);
 
-  const { data, isLoading, error, refetch } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ['call-history'],
     queryFn: () => campaignApi.getLogs(1000).then(res => res.data),
     refetchInterval: 5000,
@@ -138,10 +138,10 @@ export default function CallHistory() {
     URL.revokeObjectURL(url);
   };
 
-  const getUniqueStatuses = () => {
+  const getUniqueStatuses = (): string[] => {
     if (!data?.logs) return [];
     const statuses = new Set(data.logs.map((call: CallLog) => call.status));
-    return Array.from(statuses).sort();
+    return Array.from(statuses) as string[];
   };
 
   if (isLoading) {

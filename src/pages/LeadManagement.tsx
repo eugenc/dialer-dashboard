@@ -5,12 +5,7 @@ import {
   Upload, 
   Download, 
   Search, 
-  Plus, 
-  Trash2, 
-  RefreshCw,
-  CheckCircle,
-  AlertCircle,
-  Clock
+  RefreshCw
 } from 'lucide-react';
 import { campaignApi } from '../lib/api';
 import type { Lead } from '../lib/types';
@@ -34,12 +29,11 @@ export default function LeadManagement() {
   const [sortField, setSortField] = useState<SortField>('created_at');
   const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [showAddModal, setShowAddModal] = useState(false);
   const [uploadFile, setUploadFile] = useState<File | null>(null);
 
   const queryClient = useQueryClient();
 
-  const { data, isLoading, error, refetch } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ['leads'],
     queryFn: () => campaignApi.getLeads().then(res => res.data),
     refetchInterval: 5000,
@@ -159,10 +153,10 @@ export default function LeadManagement() {
     URL.revokeObjectURL(url);
   };
 
-  const getUniqueStatuses = () => {
+  const getUniqueStatuses = (): string[] => {
     if (!data?.leads) return [];
     const statuses = new Set(data.leads.map((lead: Lead) => lead.status));
-    return Array.from(statuses).sort();
+    return Array.from(statuses) as string[];
   };
 
   if (isLoading) {
